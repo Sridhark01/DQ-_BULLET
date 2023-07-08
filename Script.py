@@ -40,7 +40,7 @@ Hᴇʏ {}
 
 ⚠️ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ
 
-▸ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href='https://t.me/maharaja_91'>ʜᴇʀᴇ</a>
+▸ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href='https://github.com/Sridhark01/DQ-_BULLET'>ʜᴇʀᴇ</a>
 ▸ ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ʟɪɴᴋ ᴛʜɪꜱ ʙᴏᴛ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ..!
 
 ▸ ᴅᴇᴠ : <a href='https://t.me/maharaja_91'>ʀᴀᴊᴀ ᠰ TɢX</a></b>"""
