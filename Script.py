@@ -146,18 +146,18 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 
 <b>🆓 ғʀᴇᴇ:</b> <code>{}</code> """
     
-    LOG_TEXT_G = """𝐂𝐨𝐧𝐭𝐫𝐨𝐥 𝐑𝐨𝐨𝐦 𝐀𝐥𝐞𝐫𝐭    
+    LOG_TEXT_G = """<b>Control Room Alert ⚠ 
     
-𝐍𝐞𝐰 𝐆𝐫𝐨𝐮𝐩
-𝐆ʀᴏᴜᴘ = {}(<code>{}</code>)
-𝐓ᴏᴛᴀʟ 𝐌ᴇᴍʙᴇʀ𝐬 = <code>{}</code> 
-𝐀ᴅᴅᴇᴅ 𝐁ʏ - {}"""
+New Group
+Group = {}(<code>{}</code>)
+Total Members = <code>{}</code> 
+Added By - {}</b>"""
 
-    LOG_TEXT_P = """𝐂𝐨𝐧𝐭𝐫𝐨𝐥 𝐑𝐨𝐨𝐦 𝐀𝐥𝐞𝐫𝐭
+    LOG_TEXT_P = """Control Room Alert
     
-𝐍𝐞𝐰 𝐔𝐬𝐞𝐫
-𝐈𝐃 - <code>{}</code>
-𝐍ᴀᴍᴇ - {}"""
+New User
+ID - <code>{}</code>
+NAME - {}"""
 
     ALRT_TXT = """ʜᴇʟʟᴏ {},
 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
