@@ -1843,11 +1843,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[                               
             InlineKeyboardButton('📸ᴛᴇʟᴇɢʀᴀᴘʜ​', callback_data='tele'),
             InlineKeyboardButton('sʜᴀʀᴇ ᴛᴇxᴛ​', callback_data='share_txt'),
-            InlineKeyboardButton('ɢᴇɴ-ᴘᴀss​', callback_data='gen_pass')
+            InlineKeyboardButton('🔒ɢᴇɴ-ᴘᴀss​', callback_data='gen_pass')
             ],[
             InlineKeyboardButton('🎶sᴏɴɢ', callback_data='song'),
             InlineKeyboardButton('📽ᴠɪᴅᴇᴏ', callback_data='video'),
-            InlineKeyboardButton('ᴘᴜʀɢᴇ​', callback_data='purge')
+            InlineKeyboardButton('⚠️ᴘᴜʀɢᴇ​', callback_data='purge')
             ],[           
             InlineKeyboardButton('🚫ᴊsᴏɴᴇ', callback_data='json'),
             InlineKeyboardButton('📯ᴛᴛs', callback_data='tts'),           
@@ -1855,7 +1855,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('🎧ᴀᴜᴅʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton('♻️ᴜʀʟ_sʜᴏʀᴛ', callback_data='urlshort'),
-            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings')                                   
+            InlineKeyboardButton('🏓ᴘɪɴɢ', callback_data='pings')                                   
             ],[                               
             InlineKeyboardButton('🔮ᴘɪɴ​', callback_data='pin'),
             InlineKeyboardButton('❗️ᴋɪᴄᴋ', callback_data='zombies'),
