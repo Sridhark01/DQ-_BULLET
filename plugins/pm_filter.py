@@ -326,40 +326,68 @@ async def advantage_spoll_choker(bot, query):
 
 #languages
 
-@Client.on_callback_query(filters.regex(r"^languages#"))
-async def languages_cb_handler(client: Client, query: CallbackQuery):
+#@Client.on_callback_query(filters.regex(r"^languages#"))
+#async def languages_cb_handler(client: Client, query: CallbackQuery):
 
-    if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
-        return await query.answer(
-            f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
-            show_alert=True,
-        )
+    #if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
+        #return await query.answer(
+           # f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+           ## show_alert=True,
+        #)
     
-    _, search, key = query.data.split("#")
+   # _, search, key = query.data.split("#")
 
-    btn = [
-        [
-            InlineKeyboardButton(
-                text=lang.title(),
-                callback_data=f"fl#{lang.lower()}#{search}#{key}"
-                ),
-        ]
-        for lang in LANGUAGES
-    ]
+    #btn = [
+       #[
+            #InlineKeyboardButton(
+               # text=lang.title(),
+                #callback_data=f"fl#{lang.lower()}#{search}#{key}"
+               # ),
+       # ]
+        #for lang in LANGUAGES
+   # ]
 
-    btn.insert(
-        0,
-        [
-            InlineKeyboardButton(
-                text="☟  ꜱᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇꜱ  ☟", callback_data="ident"
-            )
-        ],
-    )
-    req = query.from_user.id
-    offset = 0
-    btn.append([InlineKeyboardButton(text="↺ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↻", callback_data=f"next_{req}_{key}_{offset}")])
+    #btn.insert(
+        #0,
+       # [
+            #InlineKeyboardButton(
+               # text="☟  ꜱᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇꜱ  ☟", callback_data="ident"
+           # )
+       # ],
+   # )
+   # req = query.from_user.id
+   # offset = 0
+    #btn.append([InlineKeyboardButton(text="↺ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↻", callback_data=f"next_{req}_{key}_{offset}")])
 
-    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+    #await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+@Client.on_callback_query(filters.regex(r"^select_lang"))
+async def select_language(bot, query):
+    _, userid = query.data.split("#")
+    if int(userid) not in [query.from_user.id, 0]:
+        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+    btn = [[
+        InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"lang#{userid}#unknown")
+    ],[
+        InlineKeyboardButton("Eɴɢ", callback_data=f"lang#{userid}#eng"),
+        InlineKeyboardButton("Tᴀᴍ", callback_data=f"lang#{userid}#tam"),
+        InlineKeyboardButton("Hɪɴ", callback_data=f"lang#{userid}#hin")
+    ],[
+        InlineKeyboardButton("Kᴀɴ", callback_data=f"lang#{userid}#kan"),
+        InlineKeyboardButton("Tᴇʟ", callback_data=f"lang#{userid}#tel"),
+        InlineKeyboardButton("Mᴀʟ", callback_data=f"lang#{userid}#mal")
+    ],[
+        InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"lang#{userid}#multi"),
+        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"lang#{userid}#dual")
+    ],[
+        InlineKeyboardButton("Gᴏ Bᴀᴄᴋ", callback_data=f"lang#{userid}#home")
+    ]]
+    try:
+        await query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+    except MessageNotModified:
+        pass
+    await query.answer()
 
 
 @Client.on_callback_query(filters.regex(r"^fl#"))
