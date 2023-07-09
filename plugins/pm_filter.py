@@ -283,7 +283,7 @@ async def next_page(bot, query):
                     ],
                 )
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{userid}")
     ])
     try:
         await query.edit_message_reply_markup(
