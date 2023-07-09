@@ -100,6 +100,7 @@ async def language_check(bot, query):
         await query.answer(f"Sᴏʀʀʏ, Nᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {movie}.", show_alert=True)
         return
     settings = await get_settings(query.message.chat.id)
+    key = f"{query.message.chat.id}-{query.message.reply_to_message.id}"
     if 'is_shortlink' in settings.keys():
         ENABLE_SHORTLINK = settings['is_shortlink']
     else:
