@@ -27,7 +27,7 @@ async def save_group(bot, message):
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply_photo(
-                photo="https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
+                photo="https://telegra.ph/file/9f6bfb939571221e1763b.jpg",
                 caption='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
                 reply_markup=reply_markup,
             )
