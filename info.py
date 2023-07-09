@@ -46,7 +46,7 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 
 #Ai
 AI = is_enabled((environ.get("AI","True")), True)
-OPENAI_API = environ.get("OPENAI_API","")
+OPENAI_API = environ.get("OPENAI_API","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")
 AI_LOGS = int(environ.get("AI_LOGS","-1001774912790")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 
 
