@@ -19,6 +19,10 @@ API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
 
+#Clone
+CLONE_SESSIONS = {}
+CLONED_SESSIONS = []
+
 #rename
 FLOOD = int(environ.get("FLOOD", "10"))
 RENAME_MODE = bool(environ.get("RENAME_MODE"))
