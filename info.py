@@ -20,8 +20,8 @@ API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
 
 #Clone
-CLONE_SESSIONS = {}
-CLONED_SESSIONS = []
+#CLONE_SESSIONS = {}
+#CLONED_SESSIONS = []
 
 #rename
 FLOOD = int(environ.get("FLOOD", "10"))
