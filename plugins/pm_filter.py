@@ -154,15 +154,15 @@ async def language_check(bot, query):
         try:
             if settings['auto_delete']:
                 btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
+                    [
+                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
+                        InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    ]
+                )
 
-        else:
-            btn.insert(0, 
-                [
+            else:
+                btn.insert(0, 
+                    [
                     InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
                     InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
                 ]
