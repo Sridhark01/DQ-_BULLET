@@ -2731,7 +2731,8 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-    LANG[message.from_user.id] = search
+    temp.SEND_ALL_TEMP[message.from_user.id] = files
+    temp.KEYWORD[message.from_user.id] = search
     settings = await get_settings(message.chat.id)
     if 'is_shortlink' in settings.keys():
         ENABLE_SHORTLINK = settings['is_shortlink']
@@ -2828,7 +2829,7 @@ async def auto_filter(client, msg, spoll=False):
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{message.from_user.id}")
+        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{pre}#{0}{message.from_user.id}")
     ])
 
     if offset != "":
