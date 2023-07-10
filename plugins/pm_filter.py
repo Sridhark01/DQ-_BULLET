@@ -155,7 +155,7 @@ async def language_check(bot, query):
             if settings['auto_delete']:
                 btn.insert(0, 
                     [
-                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
+                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"oksee"),
                         InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
                     ]
                 )
@@ -163,7 +163,7 @@ async def language_check(bot, query):
             else:
                 btn.insert(0, 
                     [
-                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
+                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"oksee"),
                         InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
                     ]
                 )
@@ -172,7 +172,7 @@ async def language_check(bot, query):
             await save_group_settings(query.message.chat.id, 'auto_delete', True)
             btn.insert(0, 
                 [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
+                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"oksee"),
                     InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
                 ]
             )
