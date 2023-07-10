@@ -95,12 +95,13 @@ async def language_check(bot, query):
         return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     if language != "home":
         movie = f"{movie} {language}"
-    files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+    files, off_set, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
     if not files:
         await query.answer(f"Sᴏʀʀʏ, Nᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {movie}.", show_alert=True)
         return
     settings = await get_settings(query.message.chat.id)
     key = f"{query.message.chat.id}-{query.message.reply_to_message.id}"
+    BUTTONS[key] = movie
     if 'is_shortlink' in settings.keys():
         ENABLE_SHORTLINK = settings['is_shortlink']
     else:
@@ -152,42 +153,7 @@ async def language_check(bot, query):
                 ]
                 for file in files
             ]
-    try:
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
-
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
-                
-    except KeyError:
-        grpid = await active_connection(str(query.message.from_user.id))
-        await save_group_settings(grpid, 'auto_delete', True)
-        settings = await get_settings(query.message.chat.id)
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
-
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
+    
     try:
         settings = await get_settings(query.message.chat.id)
         if settings['max_btn']:
