@@ -163,21 +163,13 @@ async def language_check(bot, query):
             else:
                 btn.insert(0, 
                     [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
+                        InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
+                        InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
+                    ]
+                )
                     
         except KeyError:
             await save_group_settings(query.message.chat.id, 'auto_delete', True)
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
-                    InlineKeyboardButton("sᴇʟᴇᴄᴛ​", callback_data="ooooo")
-                ]
-            )
-
-        else:
             btn.insert(0, 
                 [
                     InlineKeyboardButton("ᴀʟʟ​", callback_data=f"send_fall#files#{key}#{offset}"),
