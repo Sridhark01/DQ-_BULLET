@@ -2,6 +2,7 @@ import os
 from pyrogram import Client, filters
 from urllib.parse import quote
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from info import CHNL_LNK
 
 @Client.on_message(filters.command(["share_text", "share", "sharetext",]))
 async def share_text(client, message):
@@ -16,7 +17,7 @@ async def share_text(client, message):
         await message.reply_text(
             text=f"**Nᴏᴛɪᴄᴇ:**\n\n1. ʀᴇᴩʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ.\n2. ɴᴏ ᴍᴇᴅɪᴀ ꜱᴜᴩᴩᴏʀᴛ ﹝ sᴜᴩᴩᴏʀᴛs ᴏɴʟʏ ᴛᴇxᴛ ﹞\n\n**Jᴏɪɴ Nᴏᴡ Oᴜʀ Uᴩᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ**",                
             reply_to_message_id=reply_id,               
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💌 ʙᴏᴛꜱ ᴜᴩᴅᴀᴛᴇs 💌", url=f"https://t.me/+e_UqPGvuQ5E5NGU1")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💌 ʙᴏᴛꜱ ᴜᴩᴅᴀᴛᴇs 💌", url=CHNL_LNK)]])
             )                                                   
         return
     await message.reply_text(
@@ -26,5 +27,5 @@ async def share_text(client, message):
              [[
                InlineKeyboardButton("💌 ꜱʜᴀʀᴇ ɪᴅ 💌", url=f"https://t.me/share/url?url={quote(input_text)}")
              ],[
-               InlineKeyboardButton("💌 ʙᴏᴛꜱ ᴜᴩᴅᴀᴛᴇs 💌", url=f"https://t.me/+e_UqPGvuQ5E5NGU1")
+               InlineKeyboardButton("💌 ʙᴏᴛꜱ ᴜᴩᴅᴀᴛᴇs 💌", url=CHNL_LNK)
              ]]))      
