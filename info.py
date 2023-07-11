@@ -93,6 +93,10 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shorturllink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '973a78409424fc98d61399e41a1aa90ba0199e10')
 
+#group and channel links
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+k-0-OWAtrkoyM2Y1')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+-FcngP9amJ9jYjA1')
+M_GRP_LINK = environ.get('M_GRP_LINK', 'https://t.me/+hXelbPemMlQ5MTQ1')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
@@ -104,8 +108,6 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "7")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "False")), False)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+8vZTQtzo0lBmNDY9')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+e_UqPGvuQ5E5NGU1')
 MSG_ALRT = environ.get('MSG_ALRT', 'Piracy Is Crime')
 NOR_ALRT =  environ.get('NOR_ALRT', 'NO IMAGES IS FOUND')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
