@@ -798,9 +798,9 @@ async def deletemultiplefiles(bot, message):
     except:
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, Give me a keyword along with the command to delete files.</b>")
     k = await bot.send_message(chat_id=message.chat.id, text=f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
-    files, next_offset, total = await get_bad_files(keyword)
-    await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in 5 seconds !</b>")
-    await asyncio.sleep(5)
+    files, total = await get_bad_files(keyword)
+    await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in 30 seconds !</b>")
+    await asyncio.sleep(30)
     deleted = 0
     for file in files:
         await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted {str(deleted)} files from DB for your query {keyword} !\n\nPlease wait...</b>")
