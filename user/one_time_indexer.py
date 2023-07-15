@@ -8,7 +8,7 @@ logging.getLogger().setLevel(logging.WARNING)
 import asyncio
 from pyrogram import Client
 from info import SESSION, USERBOT_STRING_SESSION, API_ID, API_HASH, BOT_TOKEN, CHANNELS
-from database.ia_filterdb import save_file
+from ia_filterdb import save_file
 
 
 async def main():
