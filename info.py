@@ -68,6 +68,7 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 support_chat_id = environ.get('SUPPORT_CHAT_ID')
 reqst_channel = environ.get('REQST_CHANNEL_ID','-1001774912790')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
+JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 login_channel = environ.get('LOGIN_CHANNEL')
 LOGIN_CHANNEL = int(login_channel) if login_channel and id_pattern.search(login_channel) else None
