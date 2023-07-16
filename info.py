@@ -25,6 +25,16 @@ USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
 #CLONE_SESSIONS = {}
 #CLONED_SESSIONS = []
 
+# FSUB
+auth_channel = environ.get('AUTH_CHANNEL')
+AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
+# Set to False inside the bracket if you don't want to use Request Channel else set it to Channel ID
+REQ_CHANNEL = environ.get("REQ_CHANNEL", False)
+REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
+JOIN_REQS_DB = environ.get("JOIN_REQS_DB", 'DATABASE_URI')
+group_sub = environ.get('GROUP_SUB')
+GROUP_SUB = int(group_sub) if auth_channel and id_pattern.search(group_sub) else None
+
 #rename
 FLOOD = int(environ.get("FLOOD", "10"))
 RENAME_MODE = bool(environ.get("RENAME_MODE"))
@@ -68,7 +78,6 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 support_chat_id = environ.get('SUPPORT_CHAT_ID')
 reqst_channel = environ.get('REQST_CHANNEL_ID','-1001774912790')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
-JOIN_REQS_DB = environ.get("JOIN_REQS_DB", 'DATABASE_URI')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 login_channel = environ.get('LOGIN_CHANNEL')
 LOGIN_CHANNEL = int(login_channel) if login_channel and id_pattern.search(login_channel) else None
