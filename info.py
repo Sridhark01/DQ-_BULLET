@@ -33,7 +33,6 @@ REQ_CHANNEL = environ.get("REQ_CHANNEL", False)
 REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", 'DATABASE_URI')
 group_sub = environ.get('GROUP_SUB')
-GROUP_SUB = int(group_sub) if auth_channel and id_pattern.search(group_sub) else None
 
 #rename
 FLOOD = int(environ.get("FLOOD", "10"))
