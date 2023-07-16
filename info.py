@@ -145,6 +145,7 @@ FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 
 # Delete Time
 IMDB_DLT_TIME = int(environ.get('IMDB_DLT_TIME', 600))
+DLT_TIME = int(environ.get('DLT_TIME', 20))
 
 # heroku
 HRK_APP_NAME = environ.get('HRK_APP_NAME', 'mybots')
