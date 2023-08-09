@@ -210,10 +210,16 @@ NAME - {}"""
 
 ❍ sɪᴢᴇ : {file_size}"""
 
-    IMDB_TEMPLATE_TXT = """
-<b>𝐇𝐞𝐲 {message.from_user.mention}, 𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐫𝐞𝐬𝐮𝐥𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 {query}
+    IMDB_TEMPLATE_TXT = """<b>
+🎬 Title</b>: <a href={url}>{title}</a>
+🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
+📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
+☀️ Languages : <code>{languages}</code>
+🎭 Genres: {genres}
+📆 Year: <a href={url}/releaseinfo>{year}</a>
+🎥Dɪʀᴇᴄᴛᴏʀ: {director}
 
-𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 {message.chat.title}</b>"""
+🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
