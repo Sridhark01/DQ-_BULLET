@@ -210,16 +210,16 @@ NAME - {}"""
 
 ❍ sɪᴢᴇ : {file_size}"""
 
-    IMDB_TEMPLATE_TXT = """<b>
-🎬 Title</b>: <a href={url}>{title}</a>
-🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
-📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
-☀️ Languages : <code>{languages}</code>
-🎭 Genres: {genres}
-📆 Year: <a href={url}/releaseinfo>{year}</a>
-🎥Dɪʀᴇᴄᴛᴏʀ: {director}
+    IMDB_TEMPLATE_TXT = """
+🎬 <b>Title: {title}
+🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
+📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
+☀️ <b>Languages</b>: {languages}
+🎭 <b>Genres</b>: {genres}
+📆 <b>Year</b>: <a href={url}/releaseinfo>{year}</a>
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
-🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
@@ -585,34 +585,16 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 • /country [𝖼𝗈𝗎𝗇𝗍𝗋𝗒 𝗇𝖺𝗆𝖾] 
 𝖤𝗑𝖺𝗆𝗉𝗅𝖾 :- /country India</b>"""
 
+    BR_TEMPLATE_TXT = """
+🎬 <b>Title: {title}
+🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
+📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
+☀️ <b>Languages</b>: {languages}
+🎭 <b>Genres</b>: {genres}
+📆 <b>Year</b>: <a href={url}/releaseinfo>{year}</a>
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
-
-
-
-
-
-
-    IMDB_TEMPLATE_TXT = """<b>
-🎬 Title</b>: <a href={url}>{title}</a>
-🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
-📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
-☀️ Languages : <code>{languages}</code>
-🎭 Genres: {genres}
-📆 Year: <a href={url}/releaseinfo>{year}</a>
-🎥Dɪʀᴇᴄᴛᴏʀ: {director}
-
-🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
-
-    BR_TEMPLATE_TXT = """<b>
-🎬 Title</b>: <a href={url}>{title}</a>
-🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
-📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
-☀️ Languages : <code>{languages}</code>
-🎭 Genres: {genres}
-📆 Year: <a href={url}/releaseinfo>{year}</a>
-🎥Dɪʀᴇᴄᴛᴏʀ: {director}
-
-🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
 
 
 
