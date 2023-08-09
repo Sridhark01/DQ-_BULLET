@@ -48,3 +48,4 @@ python-decouple
 ffmpeg-python>=0.2.0
 ytthumb
 YoutubeTags
+dnspython==2.3.0
