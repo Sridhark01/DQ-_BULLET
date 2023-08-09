@@ -27,7 +27,6 @@ pyshorteners
 countryinfo
 datetime
 pytz
-dnspython
 python-math
 psutil==5.9.4
 speedtest-cli
