@@ -592,18 +592,27 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 
 
 
-    IMDB_TEMPLATE_TXT = """
-<b>𝐇𝐞𝐲 {message.from_user.mention}, 𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐫𝐞𝐬𝐮𝐥𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 {query}
+    IMDB_TEMPLATE_TXT = """<b>
+🎬 Title</b>: <a href={url}>{title}</a>
+🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
+📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
+☀️ Languages : <code>{languages}</code>
+🎭 Genres: {genres}
+📆 Year: <a href={url}/releaseinfo>{year}</a>
+🎥Dɪʀᴇᴄᴛᴏʀ: {director}
 
-𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 {message.chat.title}</b>
-"""
+🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
 
-    BR_TEMPLATE_TXT = """
+    BR_TEMPLATE_TXT = """<b>
+🎬 Title</b>: <a href={url}>{title}</a>
+🏆 Rating: <code><a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)</code>
+📀 Dᴜʀᴀᴛɪᴏɴ: <code>{runtime}Min</code>
+☀️ Languages : <code>{languages}</code>
+🎭 Genres: {genres}
+📆 Year: <a href={url}/releaseinfo>{year}</a>
+🎥Dɪʀᴇᴄᴛᴏʀ: {director}
 
-<b>𝐇𝐞𝐲 {title} 𝐌𝐨𝐯𝐢𝐞 𝐀𝐝𝐝𝐞𝐝 𝐓𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩...
-
-<i>{title}</i>
-𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲  𝐔𝐩𝐝𝐚𝐭𝐞</b>"""
+🗓 Sᴛᴏʀy Lɪɴᴇ: <code>{plot}</code>>"""
 
 
 
