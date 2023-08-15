@@ -211,12 +211,12 @@ NAME - {}"""
 ❍ sɪᴢᴇ : {file_size}"""
 
     IMDB_TEMPLATE_TXT = """
-🎬 <b>Title: {title}
+🎬 <b>Title: {title} ({seasons})
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
 🎭 <b>Genres</b>: {genres}
-📆 <b>Year</b>: <a href={url}/releaseinfo>{year}</a>
+📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
 🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
@@ -586,17 +586,15 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 𝖤𝗑𝖺𝗆𝗉𝗅𝖾 :- /country India</b>"""
 
     BR_TEMPLATE_TXT = """
-🎬 <b>Title: {title}
+🎬 <b>Title: {title} ({seasons})
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
 🎭 <b>Genres</b>: {genres}
-📆 <b>Year</b>: <a href={url}/releaseinfo>{year}</a>
+📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
 🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
-
-
 
     DONE_MSG = """
 <b>𝐓𝐡𝐚𝐧𝐤 𝐘𝐨𝐮 {} </b>
