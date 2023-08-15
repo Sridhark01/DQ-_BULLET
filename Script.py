@@ -211,7 +211,7 @@ NAME - {}"""
 ❍ sɪᴢᴇ : {file_size}"""
 
     IMDB_TEMPLATE_TXT = """
-🎬 <b>Title: {title} ({seasons})
+🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
@@ -586,7 +586,7 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 𝖤𝗑𝖺𝗆𝗉𝗅𝖾 :- /country India</b>"""
 
     BR_TEMPLATE_TXT = """
-🎬 <b>Title: {title} ({seasons})
+🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
