@@ -5,6 +5,27 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters, enums
 from info import DLT_TIME
 from Script import script
+from time import time
+
+async def _human_time_duration(seconds):
+    if seconds == 0:
+        return "inf"
+    parts = []
+    for unit, div in TIME_DURATION_UNITS:
+        amount, seconds = divmod(int(seconds), div)
+        if amount > 0:
+            parts.append(f'{amount} {unit}{"" if amount == 1 else "s"}')
+    return ", ".join(parts)
+
+START_TIME = datetime.utcnow()
+START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
+TIME_DURATION_UNITS = (
+    ("week", 60 * 60 * 24 * 7),
+    ("day", 60**2 * 24),
+    ("hour", 60**2),
+    ("min", 60),
+    ("sec", 1),
+)
 
 CMD = ["/", "."]
 
@@ -22,9 +43,25 @@ async def tutorial(_, message):
     await message.reply_text("😎")
 
 @Client.on_message(filters.command("ping", CMD))
-async def ping(_, message):
-    start_t = time.time()
-    rm = await message.reply_text("...........")
-    end_t = time.time()
-    time_taken_s = (end_t - start_t) * 1000
-    await rm.edit(f"𝖯𝗂𝗇𝗀!\n{time_taken_s:.3f} ms")
+async def ping_pong(client, m: Message):
+    start = time()
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
+    m_reply = await m.reply_text("Pinging...")
+    delta_ping = time() - start
+    await m_reply.edit_text(
+        f"🏓 ᴘɪɴɢ: <code>{delta_ping * 1000:.3f}ms</code>\n"
+        f"⏰ ᴜᴘᴛɪᴍᴇ: <code>{uptime}</code>\n"
+    )
+
+@Client.on_message(filters.command("uptime", CMD))
+async def get_uptime(client, m: Message):
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
+    await m.reply_text(
+        "ʙᴏᴛ sᴛᴀᴛᴜs\n"
+        f"⏰ ᴜᴘᴛɪᴍᴇ: <code>{uptime}</code>\n"
+        f"sᴛᴀʀᴛ ᴛɪᴍᴇ: <code>{START_TIME_ISO}</code>"
+    )
