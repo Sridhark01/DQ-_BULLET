@@ -101,12 +101,12 @@ COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
 DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 
 
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shorturllink.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '973a78409424fc98d61399e41a1aa90ba0199e10')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', '')
+SHORTLINK_API = environ.get('SHORTLINK_API', '')
 
 #group and channel links
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+k-0-OWAtrkoyM2Y1')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+-FcngP9amJ9jYjA1')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+DIFevVBulGYzYzk1')
 M_GRP_LINK = environ.get('M_GRP_LINK', 'https://t.me/+hXelbPemMlQ5MTQ1')
 
 # Others
@@ -124,7 +124,7 @@ NOR_ALRT =  environ.get('NOR_ALRT', 'NO IMAGES IS FOUND')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Nothing_Support_Group')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
-IMDB = is_enabled((environ.get('IMDB', "True")), True)
+IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
@@ -145,7 +145,7 @@ PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 #redict
-MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/Royal_Enfield_bot_Updates")
+MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/+DIFevVBulGYzYzk1")
 FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+hHHW8TOqFhE1OWQ1")
 MSG_ALRT = environ.get('MSG_ALRT', '𝑪𝑯𝑬𝑪𝑲 & 𝑻𝑹𝒀 𝑨𝑳𝑳 𝑴𝒀 𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺')
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
