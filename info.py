@@ -63,7 +63,7 @@ AI_LOGS = int(environ.get("AI_LOGS","-1001774912790")) #GIVE YOUR NEW LOG CHANNE
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6327489457').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001932946380 -1001938978997 -1001803151090 -1001856757812').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001979254627').split()]
 
 LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
 
