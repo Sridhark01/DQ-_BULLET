@@ -269,6 +269,23 @@ Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
 
 
 🌿ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/maharaja_91'>ʀᴀᴊᴀ ᠰ TɢX</a></b>"""
+
+    CREATOR_REQUIRED = """❗You have to be the group creator to do that."""
+      
+    INPUT_REQUIRED = "❗ **Arguments Required**"
+      
+    KICKED = """✔️ Successfully Kicked {} members according to the arguments provided."""
+      
+    START_KICK = """🚮 Removing inactive members this may take a while..."""
+      
+    ADMIN_REQUIRED = """❗I am not an admin here\n__Leaving this chat, add me again as admin with ban user permission."""
+      
+    DKICK = """✔️ Kicked {} Deleted Accounts Successfully."""
+      
+    FETCHING_INFO = """Collecting users information..."""
+      
+    STATUS = """{}\nChat Member Status**\n\n```recently``` - {}\n```within_week``` - {}\n```within_month``` - {}\n```long_time_ago``` - {}\nDeleted Account - {}\nBot - {}\nUnCached - {}
+"""
     DISC_TXT = """
 <b><code>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
 
