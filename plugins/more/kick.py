@@ -1,83 +1,83 @@
 from info import ADMINS
-from Script import script
+from script import Script
 from time import time, sleep
-from pyrogram import Client, filters, enums 
+from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid
 
 
-@Client.on_message(filters.group & filters.command('inkick'))
+@Client.on_message(filters.incoming & ~filters.private & filters.command('inkick') & filters.user(ADMINS))
 def inkick(client, message):
   user = client.get_chat_member(message.chat.id, message.from_user.id)
-  if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+  if user.status == ("creator"):
     if len(message.command) > 1:
       input_str = message.command
-      sent_message = message.reply_text(script.START_KICK)
+      sent_message = message.reply_text(Script.START_KICK)
       sleep(20)
       sent_message.delete()
       message.delete()
       count = 0
-      for member in client.get_chat_members(message.chat.id):
-        if member.user.status in input_str and not member.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+      for member in client.iter_chat_members(message.chat.id):
+        if member.user.status in input_str and not member.status in ('administrator', 'creator'):
           try:
-            client.ban_chat_member(message.chat.id, member.user.id, int(time() + 45))
+            client.kick_chat_member(message.chat.id, member.user.id, int(time() + 45))
             count += 1
             sleep(1)
           except (ChatAdminRequired, UserAdminInvalid):
-            sent_message.edit(script.ADMIN_REQUIRED)
+            sent_message.edit(Script.ADMIN_REQUIRED)
             client.leave_chat(message.chat.id)
             break
           except FloodWait as e:
             sleep(e.x)
       try:
-        sent_message.edit(script.KICKED.format(count))
+        sent_message.edit(Script.KICKED.format(count))
       except ChatWriteForbidden:
         pass
     else:
-      message.reply_text(script.INPUT_REQUIRED)
+      message.reply_text(Script.INPUT_REQUIRED)
   else:
-    sent_message = message.reply_text(script.CREATOR_REQUIRED)
+    sent_message = message.reply_text(Script.CREATOR_REQUIRED)
     sleep(5)
     sent_message.delete()
     message.delete()
 
-
-@Client.on_message(filters.group & filters.command('dkick'))
+@Client.on_message(filters.incoming & ~filters.private & filters.command('dkick') & filters.user(ADMINS))
 def dkick(client, message):
   user = client.get_chat_member(message.chat.id, message.from_user.id)
-  if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
-    sent_message = message.reply_text(script.START_KICK)
+  if user.status == ("creator"):
+    sent_message = message.reply_text(Script.START_KICK)
     sleep(20)
     sent_message.delete()
     message.delete()
     count = 0
-    for member in client.get_chat_members(message.chat.id):
-      if member.user.is_deleted and not member.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+    for member in client.iter_chat_members(message.chat.id):
+      if member.user.is_deleted and not member.status in ('administrator', 'creator'):
         try:
-          client.ban_chat_member(message.chat.id, member.user.id, int(time() + 45))
+          client.kick_chat_member(message.chat.id, member.user.id, int(time() + 45))
           count += 1
           sleep(1)
         except (ChatAdminRequired, UserAdminInvalid):
-          sent_message.edit(script.ADMIN_REQUIRED)
+          sent_message.edit(Script.ADMIN_REQUIRED)
           client.leave_chat(message.chat.id)
           break
         except FloodWait as e:
           sleep(e.x)
     try:
-      sent_message.edit(script.DKICK.format(count))
+      sent_message.edit(Script.DKICK.format(count))
     except ChatWriteForbidden:
       pass
   else:
-    sent_message = message.reply_text(script.CREATOR_REQUIRED)
+    sent_message = message.reply_text(Script.CREATOR_REQUIRED)
     sleep(5)
     sent_message.delete()
     message.delete()
 
-  
-@Client.on_message((filters.channel | filters.group) & filters.command('instatus'))
+@Client.on_message(filters.incoming & ~filters.private & filters.command('instatus') & filters.user(ADMINS))
 def instatus(client, message):
-    sent_message = message.reply_text("🔁 Processing.....")
+  user = client.get_chat_member(message.chat.id, message.from_user.id)
+  if user.status in ('administrator', 'creator', 'ADMINS'):
+    sent_message = message.reply_text(Script.FETCHING_INFO)
     recently = 0
     within_week = 0
     within_month = 0
@@ -85,35 +85,22 @@ def instatus(client, message):
     deleted_acc = 0
     uncached = 0
     bot = 0
-    for member in client.get_chat_members(message.chat.id, limit=int(10000)):
+    for member in client.iter_chat_members(message.chat.id):
       user = member.user
       if user.is_deleted:
         deleted_acc += 1
       elif user.is_bot:
         bot += 1
-      elif user.status == enums.UserStatus.RECENTLY:
+      elif user.status == "recently":
         recently += 1
-      elif user.status == enums.UserStatus.LAST_WEEK:
+      elif user.status == "within_week":
         within_week += 1
-      elif user.status == enums.UserStatus.LAST_MONTH:
+      elif user.status == "within_month":
         within_month += 1
-      elif user.status == enums.UserStatus.LONG_AGO:
+      elif user.status == "long_time_ago":
         long_time_ago += 1
       else:
         uncached += 1
-
-    chat_type = message.chat.type
-    if chat_type == enums.ChatType.CHANNEL:
-         sent_message.edit(f"{message.chat.title}\nChat Member Status\n\nRecently - {recently}\nWithin Week - {within_week}\nWithin Month - {within_month}\nLong Time Ago - {long_time_ago}\n\nDeleted Account - {deleted_acc}\nBot - {bot}\nUnCached - {uncached}")            
-    elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        user = client.get_chat_member(message.chat.id, message.from_user.id)
-        if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER, ADMINS):
-            sent_message.edit(f"{message.chat.title}\nChat Member Status\n\nRecently - {recently}\nWithin Week - {within_week}\nWithin Month - {within_month}\nLong Time Ago - {long_time_ago}\n\nDeleted Account - {deleted_acc}\nBot - {bot}\nUnCached - {uncached}")
-        else:
-            sent_message.edit("you are not administrator in this chat")
-
-
-  
-
+    sent_message.edit(Script.STATUS.format(message.chat.title, recently, within_week, within_month, long_time_ago, deleted_acc, bot, uncached))
 
 
