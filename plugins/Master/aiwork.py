@@ -3,7 +3,7 @@
 # (c) @VysakhTG
 
 from pyrogram import Client, filters
-from plugins.oggy.engine import ask_ai
+from plugins.master.engine import ask_ai
 
 
 @Client.on_message(filters.command('openai'))
