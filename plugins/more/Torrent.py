@@ -50,7 +50,7 @@ async def find(_, message):
         f"➲Leechers: {a[i]['Leechers']} || "
         f"➲Seeders: {a[i]['Seeders']}\n"
         f"➲Type: {a[i]['Category']}\n"
-        f"➲Magnet:\n```{a[i]['Magnet']}```\n\n\n"
+        f"➲Magnet:\n<code> {a[i]['Magnet']}</code>\n\n\n"
     )
     await m.edit(
         result,
@@ -84,7 +84,7 @@ async def callback_query_next(_, message):
         f"➲Leechers: {a[i]['Leechers']} || "
         f"➲Seeders: {a[i]['Seeders']}\n"
         f"➲Type: {a[i]['Category']}\n"
-        f"➲Magnet: `<code> {a[i]['Magnet']}</code>`\n\n\n"
+        f"➲Magnet: <code> {a[i]['Magnet']}</code>\n\n\n"
     )
     await m.edit(
         result,
