@@ -88,6 +88,10 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://sri:sri@cluster0.twm8v
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+# MongoDB information of (user)
+USER_DATABASE_URI = environ.get('USER_DATABASE_URI', "mongodb+srv://userdb:userdb@cluster0.e2lx0zg.mongodb.net/?retryWrites=true&w=majority")
+USER_DATABASE_NAME = environ.get('USER_DATABASE_NAME', "cluster0")
+
 # Custom Chats
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', '-1001966097254'))
 FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 'https://t.me/Bullet_Data')
