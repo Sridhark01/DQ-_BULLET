@@ -7,8 +7,8 @@ import requests,os,wget
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import asyncio
-from info import LOG_CHANNEL
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('💖🇮🇳✨ Made By ✨🇮🇳💖', url='https://t.me/RE_X_BOTZ')]])
+from info import LOG_CHANNEL, CHNL_LNK
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('💖🇮🇳✨ Made By ✨🇮🇳💖', url=CHNL_LNK)]])
 A = """{} with user id:- {} used /saavn command."""
 B = """{} with user id:- {} used /vsaavn command."""
 
@@ -70,7 +70,7 @@ async def video(client, message):
     ffile = file.replace("mp3", "mp4")
     os.rename(file, ffile)
     buttons = [[
-        InlineKeyboardButton("JOIN MOVIES", url="https://t.me/RE_X_BOTZ")
+        InlineKeyboardButton("JOIN MOVIES", url=CHNL_LNK)
     ]]                           
     await message.reply_video(
     video=ffile, caption=f"[{sname}]({r['data']['results'][0]['url']}) - from @RE_X_BOTZ ",thumb=thumbnail,
