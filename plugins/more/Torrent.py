@@ -42,15 +42,15 @@ async def find(_, message):
         await m.edit("Found Nothing.")
         return
     result = (
-        f"**Page - {i+1}**\n\n"
-        f"➲Name: {a[i]['Name']}\n"
-        f"➲{a[i]['Uploader']} on "
-        f"{a[i]['Date']}\n" 
-        f"➲Size: {a[i]['Size']}\n"
-        f"➲Leechers: {a[i]['Leechers']} || "
-        f"➲Seeders: {a[i]['Seeders']}\n"
-        f"➲Type: {a[i]['Category']}\n"
-        f"➲Magnet:\n<code> {a[i]['Magnet']}</code>\n\n\n"
+        f"<b>Page - {i+1}</b>\n\n"
+        f"<b>➲Name: {a[i]['Name']}</b>\n"
+        f"<b>➲{a[i]['Uploader']} on</b>"
+        f"<b>{a[i]['Date']}</b>\n" 
+        f"<b>➲Size: {a[i]['Size']}</b>\n"
+        f"<b>➲Leechers: {a[i]['Leechers']} ||</b>"
+        f"<b>➲Seeders: {a[i]['Seeders']}</b>\n"
+        f"<b>➲Type: {a[i]['Category']}</b>\n"
+        f"<b>➲Magnet:</b>\n<code> {a[i]['Magnet']}</code>\n\n\n"
     )
     await m.edit(
         result,
@@ -76,15 +76,15 @@ async def callback_query_next(_, message):
     global query
     i += 1
     result = (
-        f"**Page - {i+1}**\n\n"
-        f"➲Name: {a[i]['Name']}\n"
-        f"➲{a[i]['Uploader']} on "
-        f"{a[i]['Date']}\n" 
-        f"➲Size: {a[i]['Size']}\n"
-        f"➲Leechers: {a[i]['Leechers']} || "
-        f"➲Seeders: {a[i]['Seeders']}\n"
-        f"➲Type: {a[i]['Category']}\n"
-        f"➲Magnet: <code> {a[i]['Magnet']}</code>\n\n\n"
+        f"<b>Page - {i+1}</b>\n\n"
+        f"<b>➲Name: {a[i]['Name']}</b>\n"
+        f"<b>➲{a[i]['Uploader']} on</b>"
+        f"<b>{a[i]['Date']}</b>\n" 
+        f"<b>➲Size: {a[i]['Size']}</b>\n"
+        f"<b>➲Leechers: {a[i]['Leechers']} ||</b>"
+        f"<b>➲Seeders: {a[i]['Seeders']}</b>\n"
+        f"<b>➲Type: {a[i]['Category']}</b>\n"
+        f"<b>➲Magnet:</b>\n<code> {a[i]['Magnet']}</code>\n\n\n"
     )
     await m.edit(
         result,
@@ -113,15 +113,15 @@ async def callback_query_previous(_, message):
     global query
     i -= 1
     result = (
-        f"**Page - {i+1}**\n\n"
-        f"➲Name: {a[i]['Name']}\n"
-        f"➲{a[i]['Uploader']} on "
-        f"{a[i]['Date']}\n" 
-        f"➲Size: {a[i]['Size']}\n"
-        f"➲Leechers: {a[i]['Leechers']} || "
-        f"➲Seeders: {a[i]['Seeders']}\n"
-        f"➲Type: {a[i]['Category']}\n"
-        f"➲Magnet: `<code>{a[i]['Magnet']}</code>`\n\n\n"
+        f"<b>Page - {i+1}</b>\n\n"
+        f"<b>➲Name: {a[i]['Name']}</b>\n"
+        f"<b>➲{a[i]['Uploader']} on</b>"
+        f"<b>{a[i]['Date']}</b>\n" 
+        f"<b>➲Size: {a[i]['Size']}</b>\n"
+        f"<b>➲Leechers: {a[i]['Leechers']} ||</b>"
+        f"<b>➲Seeders: {a[i]['Seeders']}</b>\n"
+        f"<b>➲Type: {a[i]['Category']}</b>\n"
+        f"<b>➲Magnet:</b>\n<code> {a[i]['Magnet']}</code>\n\n\n"
     )
     await m.edit(
         result,
