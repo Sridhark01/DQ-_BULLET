@@ -15,7 +15,7 @@ import aiofiles
 import speedtest
 from PIL import Image
 from pyrogram.types import Message
-from info import SUPPORT_CHAT
+from info import CHNL_LNK
 
 aiohttpsession = ClientSession()
 
@@ -44,7 +44,7 @@ async def carbon_func(_, message):
     await message.reply_photo(
         photo=carbon,
         caption="**ᴛʜɪs ᴘɪᴄ ɪs ᴀ ɴɪᴄᴇ ᴏɴᴇ​**",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤘 sᴜᴘᴘᴏʀᴛ 🤘", url='https://t.me/+8vZTQtzo0lBmNDY9')]]),                   
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤘 sᴜᴘᴘᴏʀᴛ 🤘", url=CHNL_LNK)]]),                   
     )
     await m.delete()
     carbon.close()
