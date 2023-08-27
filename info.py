@@ -80,7 +80,7 @@ REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 support_chat_id = environ.get('SUPPORT_CHAT_ID','-1001975148351')
 login_channel = environ.get('LOGIN_CHANNEL')
-LOGIN_CHANNEL = environ.get('LOGIN_CHANNEL', "-1001924870738")
+LOGIN_CHANNEL = environ.get('LOGIN_CHANNEL', "-1001943335054")
 
 
 # MongoDB information
