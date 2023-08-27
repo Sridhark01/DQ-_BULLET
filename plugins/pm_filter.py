@@ -1580,21 +1580,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('🎧ᴀᴜᴅʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton('♻️ᴜʀʟ_sʜᴏʀᴛ', callback_data='urlshort'),
-            InlineKeyboardButton('🏓ᴘɪɴɢ', callback_data='pings')                                   
-            ],[                               
-            InlineKeyboardButton('🔮ᴘɪɴ​', callback_data='pin'),
-            InlineKeyboardButton('❗️ᴋɪᴄᴋ', callback_data='zombies'),
-            InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric')
+            InlineKeyboardButton('🏓ᴘɪɴɢ', callback_data='pings') 
             ],[
-            InlineKeyboardButton('🎭sᴛɪᴄᴋɪᴅ', callback_data='sticker'),
-            InlineKeyboardButton('❓ᴡʜᴏɪs', callback_data='whois'),
-            InlineKeyboardButton('🧪ᴄᴏᴠɪᴅ', callback_data='corona')
-            ],[
-            InlineKeyboardButton('🌍ᴄᴏᴜɴᴛʀʏ', callback_data='country'),
-            InlineKeyboardButton('📝ɢᴛʀᴀɴs', callback_data='gtrans'),
-            InlineKeyboardButton('💎ᴄᴀʀʙᴏɴ', callback_data='carb')
-            ],[
-            InlineKeyboardButton('⟲ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ​⟳', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
+            InlineKeyboardButton('ᴘᴀɢᴇ 1/2', callback_data='page'),
+            InlineKeyboardButton('ɴᴇxᴛ', callback_data='modules2')
          ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1607,6 +1597,59 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
+    elif query.data == "modules2":
+        buttons = [[
+            InlineKeyboardButton('🔮ᴘɪɴ​', callback_data='pin'),
+            InlineKeyboardButton('❗️ᴋɪᴄᴋ', callback_data='zombies'),
+            InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric')
+            ],[
+            InlineKeyboardButton('🎭sᴛɪᴄᴋɪᴅ', callback_data='sticker'),
+            InlineKeyboardButton('❓ᴡʜᴏɪs', callback_data='whois'),
+            InlineKeyboardButton('🧪ᴄᴏᴠɪᴅ', callback_data='corona')
+            ],[
+            InlineKeyboardButton('🌍ᴄᴏᴜɴᴛʀʏ', callback_data='country'),
+            InlineKeyboardButton('📝ɢᴛʀᴀɴs', callback_data='gtrans'),
+            InlineKeyboardButton('💎ᴄᴀʀʙᴏɴ', callback_data='carb')
+            ],[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help2'),
+            InlineKeyboardButton('ᴘᴀɢᴇ 2/2', callback_data='page'),
+            InlineKeyboardButton('ꜱᴘᴇᴄɪᴀʟ', callback_data='special')
+         ]]    
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        
+    elif query.data == "special":
+        buttons = [[
+            InlineKeyboardButton('ꜱᴘᴇᴄɪᴀʟ ᴍᴏᴅ1', callback_data='help'),
+            InlineKeyboardButton('ꜱᴘᴇᴄɪᴀʟ ᴍᴏᴅ2', callback_data='help'),
+            InlineKeyboardButton('ᴇxᴛʀᴀ ᴍᴏᴅ', callback_data='help')
+            ],[
+            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='modules2')
+         ]] 
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )  
+        
     elif query.data == "song":
         buttons = [[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help2')
