@@ -38,6 +38,89 @@ BUTTONS = {}
 SPELL_CHECK = {}
 LANG = {}
 
+@Client.on_message(filters.group & filters.media)
+async def media(client, message):
+    userid = message.from_user.id        
+    buttons = [[     
+        InlineKeyboardButton("⚠️𝐖𝐚𝐫𝐧𝐢𝐧𝐠⚠️", callback_data="check_delete")
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+        
+    k = await message.reply_photo(
+        photo=random.choice(SP),
+        caption=f"𝐔𝐬𝐞𝐫 𝐍𝐚𝐦𝐞: {message.from_user.mention} \n𝐔𝐬𝐞𝐫 𝐈𝐝:{userid} \n\n 𝐓𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩 𝐍𝐨𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞𝐬.. 𝐋𝐚𝐬𝐭 𝐖𝐚𝐫𝐧𝐢𝐧𝐠...",
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )
+    await asyncio.sleep(5)
+    await k.delete()
+    await message.delete()
+    
+
+@Client.on_message(filters.group & filters.text & filters.incoming)
+async def give_filter(client, message):
+    userid = message.from_user.id
+    content = message.reply_to_message
+#    content = message.text                                  
+    if LOGIN_CHANNEL and not await mute_login(client, message):
+        try:
+            invite_link = await client.create_chat_invite_link(int(LOGIN_CHANNEL))          
+        except ChatAdminRequired:
+            logger.error("Make sure Bot is admin in Forcesub channel")
+            return
+        buttons = [[
+            InlineKeyboardButton("📢 𝐉𝐨𝐢𝐧 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 📢", url=invite_link.invite_link)
+        ],[
+            InlineKeyboardButton("🔁 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧 🔁", callback_data="grp_checksub")
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        
+        k = await message.reply_photo(
+            photo=random.choice(SP),
+            caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n{content} 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(90)
+        await k.delete()               
+        try:
+            await message.delete()
+        except:
+            pass
+        return
+    if message.chat.id != SUPPORT_CHAT_ID:
+        glob = await global_filters(client, message)
+        if glob == False:
+            manual = await manual_filters(client, message)
+            if manual == False:
+                settings = await get_settings(message.chat.id)
+                try:
+                    if settings['auto_ffilter']:
+                        await auto_filter(client, message)
+                    else:
+                        k = await message.reply_text(f"𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n{content} 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞..!! \n\n❌️𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐎𝐟𝐟..!!!❌️ \n𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭..")
+                        await asyncio.sleep(5)
+                        await k.delete()
+                except KeyError:
+                    grpid = await active_connection(str(message.from_user.id))
+                    await save_group_settings(grpid, 'auto_ffilter', True)
+                    settings = await get_settings(message.chat.id)
+                    if settings['auto_ffilter']:
+                        await auto_filter(client, message)
+                else:
+                    buttons = [[                    
+                    InlineKeyboardButton("⚠️ 𝐃𝐞𝐥𝐞𝐭𝐞 ⚠️", callback_data="check_delete")
+                    ]]
+                    reply_markup = InlineKeyboardMarkup(buttons)
+                    k = await message.reply_text(f"𝐔𝐬𝐞𝐫 𝐍𝐚𝐦𝐞: {message.from_user.mention} \n𝐔𝐬𝐞𝐫 𝐈𝐝:{userid} \n𝐂𝐨𝐧𝐭𝐞𝐧𝐭: {content} \n𝐋𝐚𝐬𝐭 𝐖𝐚𝐫𝐧𝐢𝐧𝐠...⚠️",
+                    reply_markup=reply_markup,
+                    parse_mode=enums.ParseMode.HTML)
+                    await asyncio.sleep(5)
+                    await k.delete()  
+                    await message.delete()
+                    
+
+
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
