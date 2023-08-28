@@ -7,7 +7,7 @@ from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
 from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, CHNL_LNK, GRP_LNK, NEWGRP
-from database.users_chats_db import db
+from database.users_chats_db import db, db2
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
 from Script import script
@@ -198,7 +198,7 @@ async def get_us_ststs(bot, message):
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
     files = await Media.count_documents()
-    size = await db.get_db_size()
+    size = await db2.get_db_size()
     free = 536870912 - size
     size = get_size(size)
     free = get_size(free)
