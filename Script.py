@@ -141,7 +141,8 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 
 <b>🉐 ᴏᴄᴄᴜᴘɪᴇᴅ:</b> <code>{}</code>
 
-<b>🆓 ғʀᴇᴇ:</b> <code>{}</code> """
+<b>🆓 ғʀᴇᴇ:</b> <code>{}</code>"""
+
     
     LOG_TEXT_G = """<b>Control Room Alert ⚠ 
     
