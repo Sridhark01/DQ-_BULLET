@@ -177,4 +177,4 @@ class Database:
         return (await self.db.command("dbstats"))['dataSize']
 
 db = Database(USER_DATABASE_URI, USER_DATABASE_NAME)
-db2 = Database2(DATABASE_NAME, DATABASE_URI)
+db2 = Database2(DATABASE_URI, DATABASE_NAME)
