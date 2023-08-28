@@ -181,12 +181,16 @@ async def get_ststs(bot, message):
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
     files = await Media.count_documents()
-    size = await db2.get_db_size()
+    size = await db.get_db_size()
     free = 536870912 - size
     size = get_size(size)
     free = get_size(free)
+    size1 = await db2.get_db_size()
+    free1 = 536870912 - size1
+    size1 = get_size(size1)
+    free1 = get_size(free1)
     await rju.edit_text(
-            text=script.ADMIN_STATS_TXT.format(uptime, ram, cpu, files, total_users, totl_chats, size, free),
+            text=script.ADMIN_STATS_TXT.format(uptime, ram, cpu, files, total_users, totl_chats, size, free, size1, free1),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
@@ -198,11 +202,15 @@ async def get_us_ststs(bot, message):
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
     files = await Media.count_documents()
-    size = await db2.get_db_size()
+    size = await db.get_db_size()
     free = 536870912 - size
     size = get_size(size)
     free = get_size(free)
-    await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free))
+    size1 = await db2.get_db_size()
+    free1 = 536870912 - size1
+    size1 = get_size(size1)
+    free1 = get_size(free1)
+    await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free, size1, free))
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
