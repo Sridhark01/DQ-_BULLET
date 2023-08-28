@@ -123,8 +123,10 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 <b>📑 ғɪʟᴇs sᴀᴠᴇᴅ: <code>{}</code>
 👤 ᴛᴏᴛᴀʟ ᴜsᴇʀs: <code>{}</code>
 ♻️ ᴛᴏᴛᴀʟ ᴄʜᴀᴛs: <code>{}</code>
-🗃️ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
-🆓 ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱</b>"""
+🗃️ ᴅʙ1 ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
+🆓 ᴅʙ1 ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
+🗃️ ᴅʙ2 ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
+🆓 ᴅʙ2 ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱</b>"""
 
     ADMIN_STATS_TXT = """
 <b>⏳ ʙᴏᴛ ᴜᴘᴛɪᴍᴇ:</b> <code>{}</code>
@@ -139,9 +141,13 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 
 <b>👥 ɢʀᴏᴜᴘs:</b> <code>{}</code>
 
-<b>🉐 ᴏᴄᴄᴜᴘɪᴇᴅ:</b> <code>{}</code>
+<b>🉐 ᴏᴄᴄᴜᴘɪᴇᴅ ᴅʙ1:</b> <code>{}</code>
 
-<b>🆓 ғʀᴇᴇ:</b> <code>{}</code>"""
+<b>🆓 ғʀᴇᴇ ᴅʙ1:</b> <code>{}</code>
+
+<b>🉐 ᴏᴄᴄᴜᴘɪᴇᴅ ᴅʙ2:</b> <code>{}</code>
+
+<b>🆓 ғʀᴇᴇ ᴅʙ2:</b> <code>{}</code>"""
 
     
     LOG_TEXT_G = """<b>Control Room Alert ⚠ 
