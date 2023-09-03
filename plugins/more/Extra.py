@@ -8,6 +8,8 @@ from Script import script
 from time import time
 from datetime import datetime
 
+
+
 async def _human_time_duration(seconds):
     if seconds == 0:
         return "inf"
@@ -38,6 +40,9 @@ async def check_alive(_, message):
     await myrr.delete()
     await andi.delete()
     await message.delete()
+    await message.reply_photo(photo=avatar_url, caption=capy, reply_markup=BUTTONS)
+    await bot.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id)) 
+    await k.delete()
 
 @Client.on_message(filters.command("ping", CMD))
 async def ping_pong(client, m: Message):
