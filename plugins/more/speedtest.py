@@ -1,7 +1,6 @@
 import asyncio
 import speedtest_cli
 from pyrogram import filters, Client
-from bot import Client
 from pyrogram.types import Message, InlineKeyboardButton
 
 SUDOERS = filters.user()
