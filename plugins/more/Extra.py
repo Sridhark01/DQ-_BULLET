@@ -6,9 +6,11 @@ from pyrogram import Client, filters, enums
 from info import DLT_TIME
 from Script import script
 from time import time
+from info import CHNL_LNK
 from datetime import datetime
 
-
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('✨ Made By ✨', url=CHNL_LNK)]])
+A = """{} with user id:- {} used /git command."""
 
 async def _human_time_duration(seconds):
     if seconds == 0:
