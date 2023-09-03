@@ -38,10 +38,6 @@ async def check_alive(_, message):
     await myrr.delete()
     await andi.delete()
     await message.delete()
-    
-@Client.on_message(filters.command("tutorial", CMD))
-async def tutorial(_, message):
-    await message.reply_text("😎")
 
 @Client.on_message(filters.command("ping", CMD))
 async def ping_pong(client, m: Message):
