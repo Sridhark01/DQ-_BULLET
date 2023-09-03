@@ -1,6 +1,6 @@
 import os
 import shutil
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters, enums, Message
 from telegraph import upload_file
 from plugins.helpers.get_file_id import get_file_id
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
