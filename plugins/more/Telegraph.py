@@ -1,9 +1,9 @@
 import os
 import shutil
-from pyrogram import Client, filters, enums, Message
+from pyrogram import Client, filters, enums
 from telegraph import upload_file
 from plugins.helpers.get_file_id import get_file_id
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 TMP_DOWNLOAD_DIRECTORY = "./DOWNLOADS/"
 
