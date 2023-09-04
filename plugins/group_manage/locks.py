@@ -2,7 +2,7 @@
 
 # repo 
 
-# https://github.com/Noob-mukesh/MukeshRobot/modules/locks.py
+# https://github.com/Noob-mukesh/MukeshRobot/blob/main/MukeshRobot/modules/locks.py
 
 
 import html
