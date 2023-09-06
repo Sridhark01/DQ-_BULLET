@@ -17,7 +17,7 @@ async def testspeed(m):
         return await m.edit(str(e))
     return result
 
-@Client.on_message(filters.command(["speedtest"]) & ~filters.channel)
+@Client.on_message(filters.command(["speed"]) & ~filters.channel)
 async def speedtest_function(bot: Client, message: Message):
     m = await message.reply_text("Running Speed test")
     result = await testspeed(m)
