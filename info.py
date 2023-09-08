@@ -112,7 +112,7 @@ SHORTLINK_API = environ.get('SHORTLINK_API', '')
 #group and channel links
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+k-0-OWAtrkoyM2Y1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+DIFevVBulGYzYzk1')
-M_GRP_LINK = environ.get('M_GRP_LINK', 'https://t.me/+hXelbPemMlQ5MTQ1')
+M_GRP_LINK = environ.get('M_GRP_LINK', 'https://t.me/+cft-rB6cc_o4OWFl')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
