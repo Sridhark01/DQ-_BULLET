@@ -213,7 +213,7 @@ async def get_us_ststs(bot, message):
     size1 = get_size(size1)
     free1 = get_size(free1)
     await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free, size1, free1))
-    await rju.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id)) 
+    await bot.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id)) 
     await k.delete()
         
 
