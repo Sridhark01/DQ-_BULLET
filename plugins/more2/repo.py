@@ -5,7 +5,10 @@
 import logging
 import os
 import requests
+from info import LOG_CHANNEL
+from pyrogram import Client as Koshik
 from pyrogram import Client, filters
+
 
 A = """{} with user id:- {} used /repo command."""
 
