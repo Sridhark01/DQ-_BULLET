@@ -225,7 +225,9 @@ NAME - {}"""
 ☀️ <b>Languages</b>: {languages},Tamil
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
-🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}"""
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
+
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
@@ -605,7 +607,9 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 ☀️ <b>Languages</b>: {languages},Tamil
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
-🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}"""
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
+
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
 
     DONE_MSG = """
 <b>𝐓𝐡𝐚𝐧𝐤 𝐘𝐨𝐮 {} </b>
