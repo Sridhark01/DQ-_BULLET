@@ -210,7 +210,7 @@ async def get_us_ststs(bot, message):
     free1 = 536870912 - size1
     size1 = get_size(size1)
     free1 = get_size(free1)
-    await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free, size1, free))
+    await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free, size1, free1))
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
