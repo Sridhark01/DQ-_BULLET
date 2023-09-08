@@ -7,6 +7,7 @@ import os
 import requests
 from pyrogram import Client, filters
 
+A = """{} with user id:- {} used /repo command."""
 
 @Client.on_message(filters.command('repo'))
 async def git(Kashmira, message):
@@ -52,3 +53,5 @@ async def git(Kashmira, message):
         if qw.get("archived") == True:
             txt += f"<b>This Project is Archived</b>"
         await pablo.edit(txt, disable_web_page_preview=True)
+        await bot.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id)) 
+        await k.delete()
