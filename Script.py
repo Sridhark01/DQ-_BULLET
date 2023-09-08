@@ -222,12 +222,10 @@ NAME - {}"""
 🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
-☀️ <b>Languages</b>: {languages}
+☀️ <b>Languages</b>: {languages},Tamil
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
-🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
-
-🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
@@ -265,16 +263,6 @@ Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
 🎯✨ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ RE Bots ᴏꜰꜰɪᴄɪᴀʟ❣
 
 ⚡️🍬ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 🦋✨
-
-
-🔰<a href='https://t.me/+e_UqPGvuQ5E5NGU1'>✥ ▷ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ◁</a>
-
-🔰<a href='https://t.me/+Z86msq8AYvllNDI1'>✥ ▷ Garage Channel ◁</a>
-
-🔰<a href='https://t.me/+8vZTQtzo0lBmNDY9'>✥ ▷ Support ɢʀᴏᴜᴩ ◁</a>
-
-🔰<a href='https://t.me/+xuX7Jr_KqGszZGE11'>✥ ▷ ᴍᴏᴠɪᴇ ʀᴇ𝚀ᴜᴇꜱᴛ ɢʀᴏᴜᴩ ◁</a>
-
 
 🌿ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/maharaja_91'>ʀᴀᴊᴀ ᠰ TɢX</a></b>"""
 
@@ -614,12 +602,10 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
-☀️ <b>Languages</b>: {languages}
+☀️ <b>Languages</b>: {languages},Tamil
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
-🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
-
-🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
+🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}"""
 
     DONE_MSG = """
 <b>𝐓𝐡𝐚𝐧𝐤 𝐘𝐨𝐮 {} </b>
