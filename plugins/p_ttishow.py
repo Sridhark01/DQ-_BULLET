@@ -13,6 +13,8 @@ from utils import get_size, temp, get_settings
 from Script import script
 from pyrogram.errors import ChatAdminRequired
 
+A = """{} with user id:- {} used /stats command."""
+
 
 """-----------------------------------------https://t.me/GetTGLink/4179 -------------------------------------"""
 BOT_START_TIME = time.time()
@@ -211,7 +213,9 @@ async def get_us_ststs(bot, message):
     size1 = get_size(size1)
     free1 = get_size(free1)
     await rju.edit(script.USER_STATS_TXT.format(files, total_users, totl_chats, size, free, size1, free1))
-
+    await rju.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id)) 
+    await k.delete()
+        
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
 async def gen_invite(bot, message):
