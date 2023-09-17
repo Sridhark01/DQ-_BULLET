@@ -7,7 +7,6 @@ import random
 lock = asyncio.Lock()
 
 
-from plugins.Force_sub import forceSubscribe_sql as sql
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -122,7 +121,7 @@ async def give_filter(client, message):
                     await message.delete()
                     
 
-@Client.on_message(filters.group & filters.text & filters.incoming & filters.private)
+'''@Client.on_message(filters.group & filters.text & filters.incoming & filters.private)
 def _check_member(client, message):
   chat_id = message.chat.id
   chat_db = sql.fs_settings(chat_id)
@@ -158,7 +157,7 @@ def _check_member(client, message):
           client.leave_chat(chat_id)
       except ChatAdminRequired:
         client.send_message(chat_id, text=f"❗ **I am not an admin in [channel]({url})**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
-        client.leave_chat(chat_id)
+        client.leave_chat(chat_id)'''
                     
 
 
