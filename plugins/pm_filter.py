@@ -126,7 +126,7 @@ def _check_member(client, message):
   chat_db = sql.fs_settings(chat_id)
   if chat_db:
     user_id = message.from_user.id
-    if not client.get_chat_member(chat_id, user_id).status in ("administrator", "creator") and not user_id in Config.SUDO_USERS:
+    if not client.get_chat_member(chat_id, user_id).status in ("administrator", "creator") and not user_id in ADMINS:
       channel = chat_db.channel
       if channel.startswith("-"):
           url = client.export_chat_invite_link(int(CHNL_LNK))
