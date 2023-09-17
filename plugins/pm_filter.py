@@ -120,6 +120,45 @@ async def give_filter(client, message):
                     await message.delete()
                     
 
+@Client.on_message(filters.text & ~filters.private & ~filters.edited, group=1)
+def _check_member(client, message):
+  chat_id = message.chat.id
+  chat_db = sql.fs_settings(chat_id)
+  if chat_db:
+    user_id = message.from_user.id
+    if not client.get_chat_member(chat_id, user_id).status in ("administrator", "creator") and not user_id in Config.SUDO_USERS:
+      channel = chat_db.channel
+      if channel.startswith("-"):
+          url = client.export_chat_invite_link(int(CHNL_LNK))
+      else:
+          url = f"https://t.me/{CHNL_LNK}"
+      try:
+        client.get_chat_member(channel, user_id)
+      except UserNotParticipant:
+        try:
+          sent_message = message.reply_text(
+              f"Hi {message.from_user.mention}, You Are **Not Subscribed** To My [Channel]({url}) Yet. Please 👉 [Join]({url}) And **Press The Button Below** 👇 To Unmute Yourself..",
+              disable_web_page_preview=True,
+              reply_markup=InlineKeyboardMarkup(
+             [
+                 [
+                     InlineKeyboardButton("💬 Subscribe", url=url)
+                 ],
+                 [
+                     InlineKeyboardButton("🔕 UnMute Me", callback_data="onUnMuteRequest")
+                 ]
+             ]
+         )
+           )
+          client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
+        except ChatAdminRequired:
+          sent_message.edit("❗ **I am not an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
+          client.leave_chat(chat_id)
+      except ChatAdminRequired:
+        client.send_message(chat_id, text=f"❗ **I am not an admin in [channel]({url})**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
+        client.leave_chat(chat_id)
+                    
+
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
