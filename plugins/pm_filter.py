@@ -122,7 +122,7 @@ async def give_filter(client, message):
                     await message.delete()
                     
 
-@Client.on_message(filters.text & filters.private & filters.edited, group=1)
+@Client.on_message(filters.group & filters.text & filters.incoming & filters.private)
 def _check_member(client, message):
   chat_id = message.chat.id
   chat_db = sql.fs_settings(chat_id)
