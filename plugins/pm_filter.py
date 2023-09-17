@@ -6,6 +6,8 @@ import math
 import random
 lock = asyncio.Lock()
 
+
+from plugins.Force_sub import forceSubscribe_sql as sql
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
