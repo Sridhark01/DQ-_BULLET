@@ -222,7 +222,7 @@ NAME - {}"""
 🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
-☀️ <b>Languages</b>: {languages},Tamil
+☀️ <b>Languages</b>: {languages}
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
@@ -604,7 +604,7 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 🎬 <b>Title: {title}
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
-☀️ <b>Languages</b>: {languages},Tamil
+☀️ <b>Languages</b>: {languages}
 🎭 <b>Genres</b>: {genres}
 📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
