@@ -81,7 +81,7 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 support_chat_id = environ.get('SUPPORT_CHAT_ID','-1001975148351')
 login_channel = environ.get('LOGIN_CHANNEL')
 LOGIN_CHANNEL = environ.get('LOGIN_CHANNEL', "-1001943335054")
-PM_TEXTS = environ.get('PM_TEXTS', '-1001846311583')
+PM_TEXTS = int(environ.get('PM_TEXTS', '-1001846311583'))
 
 
 # MongoDB information
