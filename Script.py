@@ -222,6 +222,15 @@ You can find the way to get the movie from the buttons below
 🍃
 
 ||Click the below buttons for more details🧜||</b>"""
+
+    SPEL_TEX = """<b>Go To Google Copy Correct Spelling in
+Only English Letters And Sent it
+
+Request Format:-
+Movies - Varisu 2023
+Series - Dark S01E01
+
+More Information :- Click On The Button below 🪝</b>"""
     
     CAPTION = """
  {file_name}
