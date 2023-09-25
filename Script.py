@@ -214,7 +214,7 @@ NAME - {}"""
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     NORELT = """<b>
-Hey👋 ⌛️Something is wrong❕
+Hey👋 {} ⌛️Something is wrong❕
 
 I couldn't find anything related to your request 🫧
 
