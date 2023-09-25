@@ -2505,7 +2505,7 @@ async def advantage_spell_chok(client, msg):
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
   
         k = await msg.reply_text(
-            text=(script.NORELT.format(reqstr.mention),
+            text=(script.NORELT),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
@@ -2521,7 +2521,7 @@ async def advantage_spell_chok(client, msg):
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
         k = await msg.reply_text(
-            text=(script.NORELT.format(reqstr.mention),
+            text=(script.NORELT),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
