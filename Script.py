@@ -212,6 +212,10 @@ NAME - {}"""
 𝗡𝗮𝗺𝗲 <b>: {}</b>
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
+
+    NORELT = """
+𝗡𝗮𝗺𝗲 <b>: {}</b>
+HI TESTING"""
     
     CAPTION = """
  {file_name}
