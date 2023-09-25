@@ -213,9 +213,15 @@ NAME - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    NORELT = """
-𝗡𝗮𝗺𝗲 <b>: {}</b>
-HI TESTING"""
+    NORELT = """<b>
+Hey👋 ⌛️Something is wrong❕
+
+I couldn't find anything related to your request 🫧
+
+You can find the way to get the movie from the buttons below
+🍃
+
+||Click the below buttons for more details🧜||</b>"""
     
     CAPTION = """
  {file_name}
