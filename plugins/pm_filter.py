@@ -1424,8 +1424,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "tamil":
         await query.answer(text=script.TAMIL_TXT, show_alert=True)
 
-    elif query.data == "formatin":
-        await query.answer(text=script.I_CUDNT, show_alert=True)
+    elif query.data == "for":
+        await query.answer(text=script.SPEL_TEX, show_alert=True)
         
     elif query.data == "start":
         buttons = [[
@@ -2503,7 +2503,7 @@ async def advantage_spell_chok(client, msg):
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
         InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}"),
-        InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ​ 🔎', callback_data="formatin")
+        InlineKeyboardButton('𝐅𝐨𝐫𝐦𝐚𝐭 ۞', callback_data="for")
         ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2521,7 +2521,7 @@ async def advantage_spell_chok(client, msg):
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
         InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}"),
-        InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ​ 🔎', callback_data="formatin")
+        InlineKeyboardButton('𝐅𝐨𝐫𝐦𝐚𝐭 ۞', callback_data="for")
         ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
