@@ -1,25 +1,25 @@
-#Made By @shamil_shaz_1
+#Made By @Don_Sflix
 
 import os
 import math
 import time
-from info import ADMINS
 import heroku3
 import requests
+
 from pyrogram import Client, filters, enums
 from database.users_chats_db import db
 
 #=====================================================
 BOT_START_TIME = time.time()
 CMD = ['.', '/']
-HRK_API = (os.environ.get("HRK_API", "3b7de74a-e045-430e-b023-263fc51c7bba"))
+HEROKU_API_KEY = (os.environ.get("HEROKU_API_KEY", "3b7de74a-e045-430e-b023-263fc51c7bba"))
 #=====================================================
 
-@Client.on_message(filters.private & filters.user(ADMINS) & filters.command("dyno", CMD))         
-async def bot_status_cmd(client,message):
-    if HRK_API:
+@Client.on_message(filters.private & filters.user(ADMINS) & filters.command("dyno", CMD))  
+async def bot_status(client,message):
+    if HEROKU_API_KEY:
         try:
-            server = heroku3.from_key(HRK_API)
+            server = heroku3.from_key(HEROKU_API_KEY)
 
             user_agent = (
                 'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
@@ -29,7 +29,7 @@ async def bot_status_cmd(client,message):
             accountid = server.account().id
             headers = {
             'User-Agent': user_agent,
-            'Authorization': f'Bearer {HRK_API}',
+            'Authorization': f'Bearer {HEROKU_API_KEY}',
             'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
             }
 
@@ -54,21 +54,14 @@ async def bot_status_cmd(client,message):
                 usedperc = math.floor(quota_used / total_quota * 100)
                 leftperc = math.floor(quota_left / total_quota * 100)
 
-#---------text--------🔥
-
                 quota_details = f"""
-💫𝐒𝐄𝐑𝐕𝐄𝐑 𝐒𝐓𝐀𝐓𝐔𝐒💫
-
-💠 𝗧𝗼𝗧𝗮𝗹 𝗗𝘆𝗻𝗼 ➪ {total}hr 𝖿𝗋𝖾𝖾 𝖽𝗒𝗇𝗈!
- 
-💠 𝗗𝘆𝗻𝗼 𝘂𝘀𝗲𝗱 ➪ {used} 𝖧𝗈𝗎𝗋𝗌 ( {usedperc}% )
-        
-💠 𝗗𝘆𝗻𝗼 𝗿𝗲𝗺𝗮𝗶𝗻𝗶𝗻𝗴 ➪ {hours} 𝖧𝗈𝗎𝗋𝗌 ( {leftperc}% )
-        
-💠 𝗔𝗽𝗽𝗿𝗼𝘅𝗶𝗺𝗮𝘁𝗲 𝗱𝗮𝘆𝘀 ➪ {days} days left!"""
-
-#----------end---------💯
-
+Heroku Account Status
+➪ 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 {total} 𝗁𝗈𝗎𝗋𝗌 𝗈𝖿 𝖿𝗋𝖾𝖾 𝖽𝗒𝗇𝗈 𝗊𝗎𝗈𝗍𝖺 𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖾𝖺𝖼𝗁 𝗆𝗈𝗇𝗍𝗁.
+➪ 𝖣𝗒𝗇𝗈 𝗁𝗈𝗎𝗋𝗌 𝗎𝗌𝖾𝖽 𝗍𝗁𝗂𝗌 𝗆𝗈𝗇𝗍𝗁:
+        • {used} 𝖧𝗈𝗎𝗋𝗌 ( {usedperc}% )
+➪ 𝖣𝗒𝗇𝗈 𝗁𝗈𝗎𝗋𝗌 𝗋𝖾𝗆𝖺𝗂𝗇𝗂𝗇𝗀 𝗍𝗁𝗂𝗌 𝗆𝗈𝗇𝗍𝗁:
+        • {hours} 𝖧𝗈𝗎𝗋𝗌 ( {leftperc}% )
+        • Approximately {days} days!"""
             else:
                 quota_details = ""
         except:
@@ -92,8 +85,8 @@ async def bot_status_cmd(client,message):
         disk = ""
 
     await message.reply_text(
-        "💥 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝘀𝘁𝗮𝘁𝘂𝘀 𝗼𝗳 𝘆𝗼𝘂𝗿 𝗕𝗼𝘁💥\n\n"
-        "💫𝐃𝐁 𝐒𝐓𝐀𝐓𝐔𝐒💫\n"
+        "𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝘀𝘁𝗮𝘁𝘂𝘀 𝗼𝗳 𝘆𝗼𝘂𝗿 𝗕𝗼𝘁\n\n"
+        "DB Status\n"
         f"➪ 𝖡𝗈𝗍 𝖴𝗉𝗍𝗂𝗆𝖾: {uptime}\n"
         f"{quota_details}"
         f"{disk}",
