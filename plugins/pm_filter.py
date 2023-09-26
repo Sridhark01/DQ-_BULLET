@@ -301,7 +301,7 @@ async def language_check(bot, query):
             )
         
         btn.insert(0, [
-            InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{query.from_user.id}")
+            InlineKeyboardButton("🔊 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇs 🔊", callback_data=f"select_lang#{query.from_user.id}")
         ])
 
         if offset != "":
@@ -537,7 +537,7 @@ async def next_page(bot, query):
                     ],
                 )
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{req}")
+        InlineKeyboardButton("🔊 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇs 🔊", callback_data=f"select_lang#{req}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -2338,7 +2338,7 @@ async def auto_filter(client, msg, spoll=False):
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ ʟᴀɴɢᴜᴀɢᴇs ⭕️", callback_data=f"select_lang#{message.from_user.id}")
+        InlineKeyboardButton("🔊 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇs 🔊", callback_data=f"select_lang#{message.from_user.id}")
     ])
 
     if offset != "":
