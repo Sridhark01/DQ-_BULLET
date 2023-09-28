@@ -180,6 +180,23 @@ async def broadcast_messages(user_id, message):
         return False, "Error"
     except Exception as e:
         return False, "Error"
+        
+
+async def groups_broadcast_messages(chat_id, message):
+    try:
+        k = await message.copy(chat_id=chat_id)
+        try:
+            await k.pin()
+        except:
+            pass
+        return "Success"
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        return await groups_broadcast_messages(chat_id, message)
+    except Exception as e:
+        await db.delete_chat(chat_id)
+        return "Error"
+        
 
 async def search_gagala(text):
     usr_agent = {
