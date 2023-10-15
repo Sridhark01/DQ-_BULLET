@@ -246,7 +246,8 @@ More Information :- Click On The Button below 🪝</b>"""
 📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
-🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>
+{seasons}"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
