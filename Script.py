@@ -238,7 +238,8 @@ More Information :- Click On The Button below 🪝</b>"""
 ❍ sɪᴢᴇ : {file_size}"""
 
     IMDB_TEMPLATE_TXT = """
-🎬 <b>Title: {title}
+🎬 <b>Title: {title} Aᴋᴀ: {aka}
+📆 <b>Seasons</b>: <code>{seasons}</code>
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
@@ -246,8 +247,7 @@ More Information :- Click On The Button below 🪝</b>"""
 📆 <b>Year</b>: {year}
 🎥 <b>Dɪʀᴇᴄᴛᴏʀ</b>: {director}
 
-🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>
-{seasons}"""
+🗓 <b>Sᴛᴏʀy Lɪɴᴇ</b>: <code>{plot}</code></b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
@@ -621,7 +621,8 @@ Tʜɪs ᴍᴏᴅᴜʟᴇ ɪs ᴛᴏ ғɪɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙ�
 𝖤𝗑𝖺𝗆𝗉𝗅𝖾 :- /country India</b>"""
 
     BR_TEMPLATE_TXT = """
-🎬 <b>Title: {title}
+🎬 <b>Title: {title} Aᴋᴀ: {aka}
+📆 <b>Seasons</b>: <code>{seasons}</code>
 🏆 <b>Rating</b>: <code>({rating} based on {votes} user ratings.)</code>
 📀 <b>Dᴜʀᴀᴛɪᴏɴ</b>: <code>{runtime}Min</code>
 ☀️ <b>Languages</b>: {languages}
