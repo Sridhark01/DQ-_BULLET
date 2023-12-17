@@ -801,10 +801,9 @@ async def deletemultiplefiles(bot, message):
     files, total = await get_bad_files(keyword)
     await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in <code>30</code> seconds !</b>")
     await asyncio.sleep(30)
-    deleted = 0
+    deleted = 10
     for file in files:
         await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>")
-        await asyncio.sleep(30)
         file_ids = file.file_id
         file_name = file.file_name
         result = await Media.collection.delete_one({
