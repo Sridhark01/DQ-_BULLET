@@ -787,10 +787,6 @@ async def send_msg(bot, message):
         await message.reply_text("<b>Usᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴜsɪɴɢ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ɪᴅ. Fᴏʀ ᴇɢ: /send ᴜsᴇʀɪᴅ</b>")
 
 
-    
-    elif query.data == "data":
-        await query.answer(text=script.MALAYALAM_TXT, show_alert=True)
-
 
 @Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
 async def deletemultiplefiles(bot, message):
@@ -810,7 +806,7 @@ async def deletemultiplefiles(bot, message):
     deleted = 0
     for file in files:
         await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='data')]]))
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]]))
         file_ids = file.file_id                   
         file_name = file.file_name
         result = await Media.collection.delete_one({
