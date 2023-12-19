@@ -786,6 +786,8 @@ async def send_msg(bot, message):
     else:
         await message.reply_text("<b>Usᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴜsɪɴɢ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ɪᴅ. Fᴏʀ ᴇɢ: /send ᴜsᴇʀɪᴅ</b>")
 
+dataaa = "{str(deleted)}"
+
 @Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
 async def deletemultiplefiles(bot, message):
     chat_type = message.chat.type
@@ -803,8 +805,8 @@ async def deletemultiplefiles(bot, message):
     await asyncio.sleep(30)
     deleted = 0
     for file in files:
-        await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted <code>{deleted}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('📌 Rᴇǫᴜᴇꜱᴛ Hᴇʀᴇ', url =M_GRP_LINK)]]))
+        await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='dataaa')]]))
         file_ids = file.file_id                   
         file_name = file.file_name
         result = await Media.collection.delete_one({
