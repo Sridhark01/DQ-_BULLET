@@ -807,7 +807,7 @@ async def deletemultiplefiles(bot, message):
 
 for file in files:
     if not deleted % 20:
-        await message.edit(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
+    await message.edit(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]]))
         file_ids = file.file_id                   
         file_name = file.file_name
