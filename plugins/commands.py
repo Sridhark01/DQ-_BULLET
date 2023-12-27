@@ -801,12 +801,12 @@ async def deletemultiplefiles(bot, message):
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, Give me a keyword along with the command to delete files.</b>")
     k = await bot.send_message(chat_id=message.chat.id, text=f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
     files, total = await get_bad_files(keyword)
-    await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in <code>5</code> seconds !</b>")
-    await asyncio.sleep(5)
+    await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in <code>10</code> seconds !</b>")
+    await asyncio.sleep(10)
     deleted = 0
     for file in files:
      deleted += 1
-     if not deleted % 20:
+     if not deleted % 10:
         await k.edit_text(
                 f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]])
@@ -818,7 +818,7 @@ async def deletemultiplefiles(bot, message):
         })
         if result.deleted_count:
             logger.info(f'File Found for your query {keyword}! Successfully deleted {file_name} from database.')
-            
+        deleted += 1
     await k.edit_text(text=f"<b>Process Completed for file deletion !\n\nSuccessfully deleted {str(deleted)} files from database for your query {keyword}.</b>")
 
 
