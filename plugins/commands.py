@@ -804,7 +804,7 @@ async def deletemultiplefiles(bot, message):
     await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in <code>30</code> seconds !</b>")
     await asyncio.sleep(30)
     deleted = 0
-    for file in files[:100]:
+    for file in files:
      if not deleted % 20:
         deleted += 1
         await k.edit_text(
