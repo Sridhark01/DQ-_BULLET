@@ -19,5 +19,3 @@ async def media(bot, message):
     await save_file(media)
 
     if message.document.file_name.endswith(".mkv"):
-        # Your code here
-        # ...
