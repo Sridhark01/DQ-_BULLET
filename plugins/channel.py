@@ -12,11 +12,12 @@ async def media(bot, message):
         media = getattr(message, file_type, None)
         if media is not None:
             break
-    else:
-        return
+        else:
+            return
 
     media.file_type = file_type
     media.caption = message.caption
     await save_file(media)
 
 
+        if message.document.file_name.endswith(".mkv")
