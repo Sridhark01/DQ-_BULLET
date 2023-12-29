@@ -7,7 +7,7 @@ media_filter = filters.document | filters.video  # | filters.audio#
 @Client.on_message(filters.chat(CHANNELS) & media_filter)
 async def media(bot, message):
     """Media Handler"""
-    for file_type in ("document", "video"):
+    for file_type in (".mkv", ".mp4"):
         media = getattr(message, file_type, None)
         if media is not None:
             break
@@ -17,9 +17,3 @@ async def media(bot, message):
     media.file_type = file_type
     media.caption = message.caption
     await save_file(media)
-
-    if message.document.file_name.endswith(".mkv"):
-        # Your code to be executed if the condition is true
-        print("This is a .mkv file!")
-
-    # Continue with the rest of your code outside the if block
