@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from info import CHANNELS
 from database.ia_filterdb import save_file
 
-media_filter = filters.document | filters.video #| filters.audio#
+media_filter = filters.document | filters.video  # | filters.audio#
 
 @Client.on_message(filters.chat(CHANNELS) & media_filter)
 async def media(bot, message):
@@ -19,3 +19,7 @@ async def media(bot, message):
     await save_file(media)
 
     if message.document.file_name.endswith(".mkv"):
+        # Your code to be executed if the condition is true
+        print("This is a .mkv file!")
+
+    # Continue with the rest of your code outside the if block
