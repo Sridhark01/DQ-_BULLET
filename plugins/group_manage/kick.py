@@ -50,8 +50,8 @@ def dkick(client, message):
     if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
         sent_message = message.reply_text(script.START_KICK)
         sleep(20)
-        sent_message.delete()
-        message.delete()
+    #   sent_message.delete()
+    #   message.delete()
         count = 0
         for member in client.get_chat_members(message.chat.id):
             if member.user.is_deleted and not member.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
