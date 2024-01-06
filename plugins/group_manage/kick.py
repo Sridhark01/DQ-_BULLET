@@ -66,10 +66,13 @@ def dkick(client, message):
                     break
                 except FloodWait as e:
                     sleep(e.x)
-        try:
-            sent_message.edit(script.DKICK.format(count))
-        except ChatWriteForbidden:
-            pass
+
+        # Check if the message still exists before attempting to edit
+        if sent_message.message_id:
+            try:
+                sent_message.edit(script.DKICK.format(count))
+            except ChatWriteForbidden:
+                pass
     else:
         sent_message = message.reply_text(script.CREATOR_REQUIRED)
         sleep(5)
