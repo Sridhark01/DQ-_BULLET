@@ -3,6 +3,7 @@ from Script import script
 from time import time, sleep
 from pyrogram import Client, filters, enums 
 from pyrogram.errors import FloodWait
+from datetime import datetime, timedelta
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid
 
@@ -45,34 +46,35 @@ def inkick(client, message):
 
 @Client.on_message(filters.group & filters.command('dkick'))
 def dkick(client, message):
-  user = client.get_chat_member(message.chat.id, message.from_user.id)
-  if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
-    sent_message = message.reply_text(script.START_KICK)
-    sleep(20)
-    sent_message.delete()
-    message.delete()
-    count = 0
-    for member in client.get_chat_members(message.chat.id):
-      if member.user.is_deleted and not member.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+    user = client.get_chat_member(message.chat.id, message.from_user.id)
+    if user.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+        sent_message = message.reply_text(script.START_KICK)
+        sleep(20)
+        sent_message.delete()
+        message.delete()
+        count = 0
+        for member in client.get_chat_members(message.chat.id):
+            if member.user.is_deleted and not member.status in (enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER):
+                try:
+                    until_date = datetime.now() + timedelta(seconds=45)
+                    client.ban_chat_member(message.chat.id, member.user.id, until_date)
+                    count += 1
+                    sleep(1)
+                except (ChatAdminRequired, UserAdminInvalid):
+                    sent_message.edit(script.ADMIN_REQUIRED)
+                    client.leave_chat(message.chat.id)
+                    break
+                except FloodWait as e:
+                    sleep(e.x)
         try:
-          client.ban_chat_member(message.chat.id, member.user.id, int(time() + 45))
-          count += 1
-          sleep(1)
-        except (ChatAdminRequired, UserAdminInvalid):
-          sent_message.edit(script.ADMIN_REQUIRED)
-          client.leave_chat(message.chat.id)
-          break
-        except FloodWait as e:
-          sleep(e.x)
-    try:
-      sent_message.edit(script.DKICK.format(count))
-    except ChatWriteForbidden:
-      pass
-  else:
-    sent_message = message.reply_text(script.CREATOR_REQUIRED)
-    sleep(5)
-    sent_message.delete()
-    message.delete()
+            sent_message.edit(script.DKICK.format(count))
+        except ChatWriteForbidden:
+            pass
+    else:
+        sent_message = message.reply_text(script.CREATOR_REQUIRED)
+        sleep(5)
+        sent_message.delete()
+        message.delete()
 
   
 @Client.on_message((filters.channel | filters.group) & filters.command('instatus'))
