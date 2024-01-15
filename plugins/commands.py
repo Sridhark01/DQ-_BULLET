@@ -803,14 +803,22 @@ async def deletemultiplefiles(bot, message):
     files, total = await get_bad_files(keyword)
     await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in <code>10</code> seconds !</b>")
     await asyncio.sleep(10)
+
+    
+   # '''deleted = 0
+   # for file in files:
+   #  deleted += 1
+   #  if not deleted % 10:
+   #     await k.edit_text(
+   #             f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
+   #             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]])
+    #        )'''
+
+    
     deleted = 0
     for file in files:
-     deleted += 1
-     if not deleted % 10:
-        await k.edit_text(
-                f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]])
-            )
+        await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted <code>{str(deleted)}/{total}</code> files from DB for your query <code>{keyword}</code> !\n\nPlease wait...</b>",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data')]]))
         file_ids = file.file_id                   
         file_name = file.file_name
         result = await Media.collection.delete_one({
