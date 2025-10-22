@@ -22,7 +22,7 @@ beautifulsoup4==4.12.2
 search_engine_parser==0.6.8
 cinemagoer==2023.5.1
 wget==3.2
-telegraph.py==2.2.0
+telegraph==2.2.0
 googletrans==4.0.0-rc1
 
 # ─────────────── Media & File Handling ───────────────
