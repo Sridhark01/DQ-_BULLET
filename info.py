@@ -35,7 +35,7 @@ USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
 AUTH_CHANNEL = int(environ.get("AUTH_CHANNEL", "-1001943335054"))
 REQ_CHANNEL = environ.get("REQ_CHANNEL", "False")
 REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
-
+LOGIN_CHANNEL = int(environ.get("LOGIN_CHANNEL", "-1001943335054"))
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", 'DATABASE_URI')
 GROUP_SUB = environ.get('GROUP_SUB')
 
