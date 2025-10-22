@@ -23,7 +23,6 @@ search_engine_parser==0.6.8
 cinemagoer==2023.5.1
 wget==3.2
 telegraph==2.2.0
-git+https://github.com/lushan88a/googletrans.git@4.1.0a0
 
 # ─────────────── Media & File Handling ───────────────
 yt-dlp
