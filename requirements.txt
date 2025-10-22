@@ -1,37 +1,47 @@
+# ─────────────── Telegram & Core Libraries ───────────────
 pyrogram>=2.0.106
 tgcrypto
+python-telegram-bot==20.3
+
+# ─────────────── Database (MongoDB) ───────────────
 pymongo[srv]==4.15.3
 motor==3.7.1
-marshmallow==4.0.1
 umongo==3.1.0
+sqlalchemy==2.0.20
+
+# ─────────────── Utilities & APIs ───────────────
 requests==2.32.3
-beautifulsoup4==4.12.2
-cinemagoer==2023.05.01
-heroku3==5.2.1
-search_engine_parser==0.6.8
-wget==3.2
+aiohttp==3.8.5
 aiofiles==23.1.0
-ffmpeg
+python-dotenv==1.0.0
+python-decouple==3.8
+
+# ─────────────── Parsing & Web ───────────────
+beautifulsoup4==4.12.2
+search_engine_parser==0.6.8
+cinemagoer==2023.5.1
+wget==3.2
+telegraph.py==2.2.0
+googletrans==4.0.0-rc1
+
+# ─────────────── Media & File Handling ───────────────
+yt-dlp
 youtube_search==1.0.0
 youtube-search-python==1.4.6
-yt-dlp
-aiohttp==3.8.5
-gTTS==2.3.0
-googletrans==4.0.0-rc1
-telegraph==0.0.5
-PyPDF2==3.0.1
-ujson==5.7.0
-pyshorteners==1.0.1
-countryinfo==0.1.0
-pytz==2023.3
-psutil==5.9.5
-speedtest-cli==2.1.0
-openai==0.27.8
-humanize==4.8.0
-python-dotenv==1.0.0
-python-telegram-bot==20.3
-pillow==10.0.0
-python-decouple==3.7
 ffmpeg-python>=0.2.0
-dnspython==2.4.2
-sqlalchemy==2.0.20
+pillow==10.3.0
+PyPDF2==3.0.1
+gTTS==2.5.3
+
+# ─────────────── Miscellaneous ───────────────
+marshmallow==4.0.1
+ujson==5.10.0
+pyshorteners==1.0.1
+countryinfo==0.1.2
+pytz==2024.1
+psutil==5.9.8
+speedtest-cli==2.1.3
+openai==1.45.0
+humanize==4.10.0
+dnspython==2.6.1
+heroku3==5.2.1
