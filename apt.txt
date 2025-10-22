@@ -1,0 +1,5 @@
+libxml2-dev
+libxslt-dev
+python3.13-dev
+gcc
+ffmpeg
