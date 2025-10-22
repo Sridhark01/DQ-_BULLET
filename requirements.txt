@@ -29,7 +29,9 @@ yt-dlp
 youtube_search==1.0.0
 youtube-search-python==1.4.6
 ffmpeg-python>=0.2.0
-pillow==10.3.0
+#pillow==10.3.0
+pillow==11.0.0
+
 PyPDF2==3.0.1
 gTTS==2.5.3
 
