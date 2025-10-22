@@ -10,7 +10,9 @@ umongo==3.1.0
 requests==2.32.5
 beautifulsoup4==4.12.2
 cinemagoer==2023.05.01
-Heroku3==0.1.0
+#Heroku3==0.1.0
+heroku3==5.2.1
+
 search_engine_parser==1.2.0
 wget==3.2
 aiofiles==23.1.0
